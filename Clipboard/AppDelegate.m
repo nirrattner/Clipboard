@@ -5,6 +5,7 @@
 @property (weak) IBOutlet NSPanel * window;
 @property (nonatomic, strong) NSStatusItem * statusItem;
 @property (nonatomic, strong) HotKeyManager * hotKeyManager;
+@property (nonatomic, strong) id escapeKeyMonitor;
 
 @end
 
@@ -12,12 +13,24 @@
 
 - (void) applicationDidFinishLaunching:(NSNotification *)notification {
   [self initializeMenu];
-  self.hotKeyManager = [[HotKeyManager alloc] initWithTarget:self selector:@selector(showClipboardWindow)];
+  self.hotKeyManager = [[HotKeyManager alloc] initWithTarget:self selector:@selector(showWindow)];
+  
+  
+  
+  // monitor ESC key
+  NSEvent* (^handler)(NSEvent*) = ^(NSEvent *event) {
+    if (event.keyCode == 53) {
+      self.window.isVisible = NO;
+    }
+    return event;
+  };
+  self.escapeKeyMonitor = [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskKeyDown handler:handler];
+  
 }
 
 - (void) initializeMenu {
   NSMenu * menu = [[NSMenu alloc] init];
-  [menu addItemWithTitle:@"Show window" action:@selector(showClipboardWindow) keyEquivalent:@""];
+  [menu addItemWithTitle:@"Show window" action:@selector(showWindow) keyEquivalent:@""];
   [menu addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@""];
   
   self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
@@ -29,11 +42,11 @@
 - (void) applicationWillTerminate:(NSNotification *)notification {
 }
 
-- (void) showClipboardWindow {
-  NSLog(@"showWindow");
+- (void) showWindow {
   [self.window makeKeyAndOrderFront:nil];
   [self.window orderFrontRegardless];
   [self.window center];
+  [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 
 @end
