@@ -3,9 +3,12 @@
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSPanel * window;
+@property (weak) IBOutlet NSTextField * textField;
+@property (weak) IBOutlet NSCollectionView * collectionView;
+@property (weak) IBOutlet NSTableView * tableView;
 @property (nonatomic, strong) NSStatusItem * statusItem;
 @property (nonatomic, strong) HotKeyManager * hotKeyManager;
-@property (nonatomic, strong) id escapeKeyMonitor;
+@property (nonatomic, strong) id keyMonitor;
 
 @end
 
@@ -13,19 +16,8 @@
 
 - (void) applicationDidFinishLaunching:(NSNotification *)notification {
   [self initializeMenu];
+  [self initializeKeyMonitor];
   self.hotKeyManager = [[HotKeyManager alloc] initWithTarget:self selector:@selector(showWindow)];
-  
-  
-  
-  // monitor ESC key
-  NSEvent* (^handler)(NSEvent*) = ^(NSEvent *event) {
-    if (event.keyCode == 53) {
-      self.window.isVisible = NO;
-    }
-    return event;
-  };
-  self.escapeKeyMonitor = [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskKeyDown handler:handler];
-  
 }
 
 - (void) initializeMenu {
@@ -39,6 +31,16 @@
   self.statusItem.menu = menu;
 }
 
+- (void) initializeKeyMonitor {
+  NSEvent* (^handler)(NSEvent*) = ^(NSEvent *event) {
+    if (event.keyCode == 53) {
+      self.window.isVisible = NO;
+    }
+    return event;
+  };
+  self.keyMonitor = [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskKeyDown handler:handler];
+}
+
 - (void) applicationWillTerminate:(NSNotification *)notification {
 }
 
@@ -47,6 +49,11 @@
   [self.window orderFrontRegardless];
   [self.window center];
   [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+  
+  [self.textField becomeFirstResponder];
+  
+  NSLog(@"keywindow: %hhd", self.window.canBecomeKeyWindow);
+
 }
 
 @end

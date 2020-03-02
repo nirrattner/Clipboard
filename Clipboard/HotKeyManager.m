@@ -7,7 +7,7 @@
 
 @end
 
-static OSStatus handleHotKey(EventHandlerCallRef nextHandler, EventRef event, void * data) {
+static OSStatus handleHotKey(EventHandlerCallRef nextHandler, EventRef event, void * data) {  
   HotKeyManager * hotKeyManager = (__bridge HotKeyManager *) data;
   [hotKeyManager invoke];
   return noErr;
