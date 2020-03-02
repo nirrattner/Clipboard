@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C6628C6240C89DE00230AC9 /* HotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6628C5240C89DE00230AC9 /* HotKeyManager.m */; };
 		6CCA284D240C534D006D9C58 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA284C240C534D006D9C58 /* AppDelegate.m */; };
 		6CCA284F240C534E006D9C58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CCA284E240C534E006D9C58 /* Assets.xcassets */; };
 		6CCA2852240C534E006D9C58 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCA2850240C534E006D9C58 /* MainMenu.xib */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C6628C4240C89DE00230AC9 /* HotKeyManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotKeyManager.h; sourceTree = "<group>"; };
+		6C6628C5240C89DE00230AC9 /* HotKeyManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotKeyManager.m; sourceTree = "<group>"; };
 		6CCA2848240C534D006D9C58 /* Clipboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clipboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCA284B240C534D006D9C58 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CCA284C240C534D006D9C58 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,6 +63,8 @@
 			children = (
 				6CCA284B240C534D006D9C58 /* AppDelegate.h */,
 				6CCA284C240C534D006D9C58 /* AppDelegate.m */,
+				6C6628C4240C89DE00230AC9 /* HotKeyManager.h */,
+				6C6628C5240C89DE00230AC9 /* HotKeyManager.m */,
 				6CCA284E240C534E006D9C58 /* Assets.xcassets */,
 				6CCA2850240C534E006D9C58 /* MainMenu.xib */,
 				6CCA2853240C534E006D9C58 /* Info.plist */,
@@ -147,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CCA2855240C534E006D9C58 /* main.m in Sources */,
+				6C6628C6240C89DE00230AC9 /* HotKeyManager.m in Sources */,
 				6CCA284D240C534D006D9C58 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

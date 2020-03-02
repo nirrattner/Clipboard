@@ -3,24 +3,16 @@
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSPanel * window;
-@property (nonatomic, strong, readwrite) NSStatusItem * statusItem;
+@property (nonatomic, strong) NSStatusItem * statusItem;
+@property (nonatomic, strong) HotKeyManager * hotKeyManager;
 
 @end
 
-static OSStatus handleHotKey(EventHandlerCallRef nextHandler, EventRef event, void * data) {
-  AppDelegate * appDelegate = (__bridge AppDelegate *) data;
-  
-  // [appDelegate.window makeKeyAndOrderFront:nil];
-  // [appDelegate.window orderFrontRegardless];
-  
-  return noErr;
-}
-
 @implementation AppDelegate
 
-- (void) applicationDidFinishLaunching:(NSNotification *) aNotification {
+- (void) applicationDidFinishLaunching:(NSNotification *)notification {
   [self initializeMenu];
-  [self registerHotKeys];
+  self.hotKeyManager = [[HotKeyManager alloc] initWithTarget:self selector:@selector(showClipboardWindow)];
 }
 
 - (void) initializeMenu {
@@ -34,7 +26,7 @@ static OSStatus handleHotKey(EventHandlerCallRef nextHandler, EventRef event, vo
   self.statusItem.menu = menu;
 }
 
-- (void) applicationWillTerminate:(NSNotification *)aNotification {
+- (void) applicationWillTerminate:(NSNotification *)notification {
 }
 
 - (void) showClipboardWindow {
@@ -42,22 +34,6 @@ static OSStatus handleHotKey(EventHandlerCallRef nextHandler, EventRef event, vo
   [self.window makeKeyAndOrderFront:nil];
   [self.window orderFrontRegardless];
   [self.window center];
-}
-
-- (void) registerHotKeys {
-  EventHotKeyID hotKeyId;
-  hotKeyId.id = 0;
-  hotKeyId.signature = 'hkid';
-  
-  EventTypeSpec eventType;
-  eventType.eventClass = kEventClassKeyboard;
-  eventType.eventKind = kEventHotKeyPressed;
-  
-  EventHotKeyRef hotKeyRef;
-  
-  InstallApplicationEventHandler(&handleHotKey, 1, &eventType, (__bridge void *) self, NULL);
-  
-  RegisterEventHotKey(8, cmdKey + optionKey, hotKeyId, GetApplicationEventTarget(), 0, &hotKeyRef);
 }
 
 @end
