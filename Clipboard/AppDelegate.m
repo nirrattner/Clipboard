@@ -4,8 +4,6 @@
 
 @property (weak) IBOutlet NSPanel * window;
 @property (weak) IBOutlet NSTextField * textField;
-@property (weak) IBOutlet NSCollectionView * collectionView;
-@property (weak) IBOutlet NSTableView * tableView;
 @property (nonatomic, strong) NSStatusItem * statusItem;
 @property (nonatomic, strong) HotKeyManager * hotKeyManager;
 @property (nonatomic, strong) id keyMonitor;
