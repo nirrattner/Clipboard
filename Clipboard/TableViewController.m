@@ -1,5 +1,7 @@
 #import "TableViewController.h"
 
+#import "AppDelegate.h"
+
 @implementation TableViewController
 
 - (NSArray *)numbers {
@@ -16,7 +18,6 @@
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  NSLog(@"tableView");
   // populate each row of our table view with data
   // display a different value depending on each column (as identified in XIB)
     return [self.numbers objectAtIndex:row];
@@ -24,10 +25,17 @@
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
+  // NSTableView *tableView = notification.object;
   
-  NSTableView *tableView = notification.object;
-  NSLog(@"User has selected row %ld", (long)tableView.selectedRow);
+  // NSLog(@"User has selected row %ld", (long)tableView.selectedRow);
 }
 
+- (void) didEscapeKeyDown {
+  [self.appDelegate didEscapeKeyDown];
+}
+
+- (void) didEnterKeyDown {
+  [self.appDelegate didEnterKeyDown];
+}
 
 @end

@@ -10,6 +10,7 @@
 		6C6628C6240C89DE00230AC9 /* HotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6628C5240C89DE00230AC9 /* HotKeyManager.m */; };
 		6C6628CC240CA86C00230AC9 /* ClipboardPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6628CB240CA86C00230AC9 /* ClipboardPanel.m */; };
 		6C6628D4240CB7F500230AC9 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6628D3240CB7F500230AC9 /* TableViewController.m */; };
+		6C6628D7240D9E1400230AC9 /* TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6628D6240D9E1400230AC9 /* TableView.m */; };
 		6CCA284D240C534D006D9C58 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA284C240C534D006D9C58 /* AppDelegate.m */; };
 		6CCA284F240C534E006D9C58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CCA284E240C534E006D9C58 /* Assets.xcassets */; };
 		6CCA2852240C534E006D9C58 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCA2850240C534E006D9C58 /* MainMenu.xib */; };
@@ -24,6 +25,8 @@
 		6C6628CB240CA86C00230AC9 /* ClipboardPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClipboardPanel.m; sourceTree = "<group>"; };
 		6C6628D2240CB7F500230AC9 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		6C6628D3240CB7F500230AC9 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		6C6628D5240D9E1400230AC9 /* TableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableView.h; sourceTree = "<group>"; };
+		6C6628D6240D9E1400230AC9 /* TableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableView.m; sourceTree = "<group>"; };
 		6CCA2848240C534D006D9C58 /* Clipboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clipboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCA284B240C534D006D9C58 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CCA284C240C534D006D9C58 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,17 +72,19 @@
 			children = (
 				6CCA284B240C534D006D9C58 /* AppDelegate.h */,
 				6CCA284C240C534D006D9C58 /* AppDelegate.m */,
-				6C6628C4240C89DE00230AC9 /* HotKeyManager.h */,
-				6C6628C5240C89DE00230AC9 /* HotKeyManager.m */,
-				6CCA284E240C534E006D9C58 /* Assets.xcassets */,
-				6CCA2850240C534E006D9C58 /* MainMenu.xib */,
-				6CCA2853240C534E006D9C58 /* Info.plist */,
-				6CCA2854240C534E006D9C58 /* main.m */,
-				6CCA2856240C534E006D9C58 /* Clipboard.entitlements */,
 				6C6628CA240CA86C00230AC9 /* ClipboardPanel.h */,
 				6C6628CB240CA86C00230AC9 /* ClipboardPanel.m */,
+				6C6628C4240C89DE00230AC9 /* HotKeyManager.h */,
+				6C6628C5240C89DE00230AC9 /* HotKeyManager.m */,
+				6C6628D5240D9E1400230AC9 /* TableView.h */,
+				6C6628D6240D9E1400230AC9 /* TableView.m */,
 				6C6628D2240CB7F500230AC9 /* TableViewController.h */,
 				6C6628D3240CB7F500230AC9 /* TableViewController.m */,
+				6CCA2854240C534E006D9C58 /* main.m */,
+				6CCA2850240C534E006D9C58 /* MainMenu.xib */,
+				6CCA2853240C534E006D9C58 /* Info.plist */,
+				6CCA2856240C534E006D9C58 /* Clipboard.entitlements */,
+				6CCA284E240C534E006D9C58 /* Assets.xcassets */,
 			);
 			path = Clipboard;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				6CCA2855240C534E006D9C58 /* main.m in Sources */,
 				6C6628D4240CB7F500230AC9 /* TableViewController.m in Sources */,
 				6C6628C6240C89DE00230AC9 /* HotKeyManager.m in Sources */,
+				6C6628D7240D9E1400230AC9 /* TableView.m in Sources */,
 				6CCA284D240C534D006D9C58 /* AppDelegate.m in Sources */,
 				6C6628CC240CA86C00230AC9 /* ClipboardPanel.m in Sources */,
 			);

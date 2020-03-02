@@ -28,7 +28,7 @@ static OSStatus handleHotKey(EventHandlerCallRef nextHandler, EventRef event, vo
     eventType.eventKind = kEventHotKeyPressed;
     
     InstallApplicationEventHandler(&handleHotKey, 1, &eventType, (__bridge void *) self, NULL);
-    RegisterEventHotKey(8, cmdKey + optionKey, hotKeyId, GetApplicationEventTarget(), 0, &eventHotKeyRef);
+    RegisterEventHotKey(C_KEYCODE, cmdKey + optionKey, hotKeyId, GetApplicationEventTarget(), 0, &eventHotKeyRef);
   }
   return self;
 }
