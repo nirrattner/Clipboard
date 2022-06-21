@@ -2,33 +2,48 @@
 
 #import "AppDelegate.h"
 
+#define LIST_CAPACITY (100)
+
+@interface TableViewController ()
+
+@property (weak) IBOutlet TableView * tableView;
+@property (weak) IBOutlet NSScrollView * scrollView;
+
+@end
+
 @implementation TableViewController
 
-- (NSArray *)numbers {
-  
-  if (!_numbers) {
-    _numbers = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10"];
+- (NSMutableOrderedSet *)values {
+  if (!_values) {
+    _values = [NSMutableOrderedSet orderedSetWithCapacity:10];
   }
-  return _numbers;
+  return _values;
 }
 
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-  // how many rows do we have here?
-  return self.numbers.count;
-}
-
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  // populate each row of our table view with data
-  // display a different value depending on each column (as identified in XIB)
-    return [self.numbers objectAtIndex:row];
-
-}
-
-- (void)tableViewSelectionDidChange:(NSNotification *)notification {
-  // NSTableView *tableView = notification.object;
+- (void) addValue:(NSString *) value {
+  [self.values removeObject:value];
+  [self.values addObject:value];
+  [self.tableView reloadData];
   
-  // NSLog(@"User has selected row %ld", (long)tableView.selectedRow);
+  while (self.values.count > LIST_CAPACITY) {
+    [self.values removeObjectAtIndex:0];
+  }
 }
+
+- (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
+  return [self.values count];
+}
+
+- (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+  return [self.values objectAtIndex:[self.values count] - row - 1];
+}
+
+/*
+- (void) tableViewSelectionDidChange:(NSNotification *)notification {
+  NSTableView *tableView = notification.object;
+  NSLog(@"User has selected row %ld", (long)tableView.selectedRow);
+}
+ */
 
 - (void) didEscapeKeyDown {
   [self.appDelegate didEscapeKeyDown];

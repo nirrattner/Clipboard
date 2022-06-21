@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C4CF4C2241EA1C60043ADB2 /* PasteboardPoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4CF4C1241EA1C60043ADB2 /* PasteboardPoller.m */; };
 		6C6628C6240C89DE00230AC9 /* HotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6628C5240C89DE00230AC9 /* HotKeyManager.m */; };
 		6C6628CC240CA86C00230AC9 /* ClipboardPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6628CB240CA86C00230AC9 /* ClipboardPanel.m */; };
 		6C6628D4240CB7F500230AC9 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6628D3240CB7F500230AC9 /* TableViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C4CF4C0241EA1C60043ADB2 /* PasteboardPoller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasteboardPoller.h; sourceTree = "<group>"; };
+		6C4CF4C1241EA1C60043ADB2 /* PasteboardPoller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasteboardPoller.m; sourceTree = "<group>"; };
 		6C6628C4240C89DE00230AC9 /* HotKeyManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotKeyManager.h; sourceTree = "<group>"; };
 		6C6628C5240C89DE00230AC9 /* HotKeyManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotKeyManager.m; sourceTree = "<group>"; };
 		6C6628CA240CA86C00230AC9 /* ClipboardPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClipboardPanel.h; sourceTree = "<group>"; };
@@ -76,6 +79,8 @@
 				6C6628CB240CA86C00230AC9 /* ClipboardPanel.m */,
 				6C6628C4240C89DE00230AC9 /* HotKeyManager.h */,
 				6C6628C5240C89DE00230AC9 /* HotKeyManager.m */,
+				6C4CF4C0241EA1C60043ADB2 /* PasteboardPoller.h */,
+				6C4CF4C1241EA1C60043ADB2 /* PasteboardPoller.m */,
 				6C6628D5240D9E1400230AC9 /* TableView.h */,
 				6C6628D6240D9E1400230AC9 /* TableView.m */,
 				6C6628D2240CB7F500230AC9 /* TableViewController.h */,
@@ -172,6 +177,7 @@
 				6C6628D7240D9E1400230AC9 /* TableView.m in Sources */,
 				6CCA284D240C534D006D9C58 /* AppDelegate.m in Sources */,
 				6C6628CC240CA86C00230AC9 /* ClipboardPanel.m in Sources */,
+				6C4CF4C2241EA1C60043ADB2 /* PasteboardPoller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
