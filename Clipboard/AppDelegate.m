@@ -22,8 +22,8 @@
 @implementation AppDelegate
 
 - (void) applicationDidFinishLaunching:(NSNotification *)notification {
-  // NSDictionary * options = @{(__bridge id) kAXTrustedCheckOptionPrompt: @YES};
-  // AXIsProcessTrustedWithOptions((CFDictionaryRef)options);
+  NSDictionary * options = @{(__bridge id) kAXTrustedCheckOptionPrompt: @YES};
+  AXIsProcessTrustedWithOptions((CFDictionaryRef)options);
   
   [self initializeMenu];
   self.pasteboard = [NSPasteboard generalPasteboard];
@@ -93,7 +93,7 @@
   TableViewController * tableViewController = (TableViewController *) self.tableView.delegate;
   if ([tableViewController.values count] > 0) {
     [self.pasteboard clearContents];
-    [self.pasteboard setString:[tableViewController.values objectAtIndex:self.tableView.selectedRow] forType:NSPasteboardTypeString];
+    [self.pasteboard setString:[tableViewController.values objectAtIndex:tableViewController.values.count - self.tableView.selectedRow - 1] forType:NSPasteboardTypeString];
     
     CGEventRef event1, event2;
     event1 = CGEventCreateKeyboardEvent(NULL, (CGKeyCode) V_KEYCODE, true);
